@@ -1,0 +1,24 @@
+{
+  "name": "perfect-weather-web",
+  "version": "1.0.0",
+  "description": "Choose the weather you like, and see places with such weather on the world map.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run client\" \"pipenv run flask run\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dartungar/perfect-weather-web.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dartungar/perfect-weather-web/issues"
+  },
+  "homepage": "https://github.com/dartungar/perfect-weather-web#readme",
+  "dependencies": {
+    "concurrently": "^5.2.0"
+  }
+}

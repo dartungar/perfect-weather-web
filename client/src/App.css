@@ -1,0 +1,52 @@
+/* 
+light: #F5F7F3    background for text
+dark: #323751     text
+blue: #2FA6BB     sea on maps
+yellow: #FFF64B   map pins, logo?
+brown: #A07E5C    additional accent
+*/
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background-color: #f5f7f3;
+  color: #323751;
+  height: 100%;
+  width: 100%;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
+}
+
+.header {
+  height: 3rem;
+  padding-left: 2rem;
+}
+
+.filters-column {
+  width: 25rem;
+  height: 100%;
+  padding: 1rem;
+}
+
+.control-item {
+  margin: 1rem 0.5rem 2rem 1rem;
+}
+
+.filter-column-button {
+  margin: 0.5rem;
+}
+
+.map-container {
+  height: 100vh;
+  width: 100%;
+  min-width: 30rem;
+  flex-wrap: wrap;
+}
