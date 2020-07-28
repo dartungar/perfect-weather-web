@@ -9,14 +9,14 @@ const ResetButton = () => {
     placesContext.resetParamsValue();
   };
   return (
-    <Button
-      className="filter-column-button"
+    <a
+      className="filter-column-button waves-effect waves-light btn grey lighten-4 blue-grey-text"
       variant="contained"
       value="Применить"
       onClick={handleReset}
     >
       Сбросить
-    </Button>
+    </a>
   );
 };
 

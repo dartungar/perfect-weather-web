@@ -1,9 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
-import FormControl from "@material-ui/core/FormControl";
-import Select from "@material-ui/core/Select";
-import MenuItem from "@material-ui/core/MenuItem";
-import InputLabel from "@material-ui/core/InputLabel";
 import PlacesContext from "../../context/places/placesContext";
+import M from "materialize-css/dist/js/materialize.min.js";
 
 const MonthSelect = () => {
   const placesContext = useContext(PlacesContext);
@@ -24,6 +21,10 @@ const MonthSelect = () => {
     Nov: "Ноябрь",
     Dec: "Декабрь",
   };
+
+  useEffect(() => {
+    M.AutoInit();
+  });
 
   // get current month short name for default value in Month Select control
   const getCurrentMonthShortName = () => {
@@ -48,20 +49,22 @@ const MonthSelect = () => {
   };
 
   return (
-    <div className="control-item">
-      <FormControl>
-        <InputLabel id="month-select-label">Месяц</InputLabel>
-        <Select
-          labelId="month-select-label"
-          id="month-select"
-          value={currentMonth}
-          onChange={handleChange}
-        >
-          {Object.keys(monthNames).map((key) => (
-            <MenuItem value={key}>{monthNames[key]}</MenuItem>
-          ))}
-        </Select>
-      </FormControl>
+    <div class="input-field col s12">
+      <select onChange={handleChange}>
+        {/* <option value="" disabled selected>
+          Выберите месяц
+        </option> */}
+        {Object.keys(monthNames).map((key) => (
+          <option
+            value={key}
+            selected={key === currentMonth}
+            className={key === currentMonth ? "selected" : ""}
+          >
+            {monthNames[key]}
+          </option>
+        ))}
+      </select>
+      <label>Месяц</label>
     </div>
   );
 };

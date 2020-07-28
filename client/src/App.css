@@ -18,6 +18,14 @@ body {
   width: 100%;
 }
 
+.color-primary {
+  color: #2fa6bb;
+}
+
+.bg-primary {
+  background-color: #2fa6bb;
+}
+
 .main-container {
   display: flex;
   flex-direction: row;
@@ -27,21 +35,74 @@ body {
 
 .header {
   height: 3rem;
-  padding-left: 2rem;
+  margin-bottom: 3rem;
+  text-align: center;
 }
 
 .filters-column {
   width: 25rem;
   height: 100%;
-  padding: 1rem;
+  padding: 3rem;
 }
 
 .control-item {
-  margin: 1rem 0.5rem 2rem 1rem;
+  margin: 3rem 0;
+}
+
+.switch {
+  display: inline-block;
+  position: relative;
+  bottom: 0.25rem;
+}
+
+.switch label input[type="checkbox"] + .lever {
+  margin-left: 0;
+}
+
+.switch label input[type="checkbox"]:checked + .lever {
+  background-color: #b6e9f2;
+  margin-left: 0;
+}
+
+.switch label input[type="checkbox"]:checked + .lever:after {
+  background-color: #2fa6bb;
 }
 
 .filter-column-button {
   margin: 0.5rem;
+}
+
+.material-icons {
+  font-size: 1rem;
+  position: relative;
+  top: 0.15rem;
+  padding-right: 0.3rem;
+}
+
+/* range slider styles */
+.rc-slider {
+  margin-top: 1rem;
+}
+
+.rc-slider-rail {
+  background-color: #b6e9f2;
+}
+
+.rc-slider-track {
+  background-color: #2fa6bb;
+}
+
+.rc-slider-handle {
+  background-color: #2fa6bb;
+  border-color: #2fa6bb;
+}
+
+.rc-slider-disabled .rc-slider-rail {
+  background-color: #323751;
+}
+
+.rc-slider-disabled .rc-slider-track {
+  background-color: gray;
 }
 
 .map-container {

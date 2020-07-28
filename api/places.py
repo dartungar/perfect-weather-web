@@ -17,8 +17,8 @@ def get_places_by_weather(params):
             params['humidity'][0], params['humidity'][1]),
         ClimateData.precipitation_monthly.between(
             params['precipitation_monthly'][0], params['precipitation_monthly'][1]),
-        ClimateData.sunshine_percent.between(
-            params['sunshine_percent'][0], params['sunshine_percent'][1]),
+        # ClimateData.sunshine_percent.between(
+        #     params['sunshine_percent'][0], params['sunshine_percent'][1]),
         ClimateData.sunshine_hours.between(params['sunshine_hours'][0], params['sunshine_hours'][1])))
 
     # result = conn.execute(sel)
@@ -33,7 +33,6 @@ def get_place_by_id(place_id):
     places = session.query(ClimateData, Iwmo).filter(
         and_(ClimateData.iwmo == Iwmo.iwmo_id, Iwmo.iwmo_id == place_id))
     places_list = [{**p[0].to_dict(), **p[1].to_dict()} for p in places.all()]
-    #place = dict(result)
     return places_list
 
 # get range of parameters
@@ -60,10 +59,10 @@ def get_params_range(month):
                                .one()[0], 1)
     sunshine_hours_max = round(session.query(func.max(ClimateData.sunshine_hours)).filter(and_(ClimateData.month == month, ClimateData.sunshine_hours < 800.0))
                                .one()[0], 1)
-    sunshine_percent_min = round(session.query(func.min(ClimateData.sunshine_percent)).filter(and_(ClimateData.month == month, ClimateData.sunshine_percent > -100.0))
-                                 .one()[0], 1)
-    sunshine_percent_max = round(session.query(func.max(ClimateData.sunshine_percent)).filter(and_(ClimateData.month == month, ClimateData.sunshine_percent < 200.0))
-                                 .one()[0], 1)
+    # sunshine_percent_min = round(session.query(func.min(ClimateData.sunshine_percent)).filter(and_(ClimateData.month == month, ClimateData.sunshine_percent > -100.0))
+    #                              .one()[0], 1)
+    # sunshine_percent_max = round(session.query(func.max(ClimateData.sunshine_percent)).filter(and_(ClimateData.month == month, ClimateData.sunshine_percent < 200.0))
+    #                              .one()[0], 1)
 
     return [{'name': 'mean_temp', 'title': 'Средняя температура', 'range': (mean_temp_min, mean_temp_max), 'coverage': get_param_coverage(month, 'mean_temp')},
             {'name': 'mean_max_temp', 'title': 'Средняя дневная температура', 'range': (
@@ -74,7 +73,8 @@ def get_params_range(month):
                 precipitation_monthly_min, precipitation_monthly_max), 'coverage': get_param_coverage(month, 'precipitation_monthly')},
             {'name': 'sunshine_hours', 'title': 'Часов солнечного света в месяц', 'range': (
                 sunshine_hours_min, sunshine_hours_max), 'coverage': get_param_coverage(month, 'sunshine_hours')},
-            {'name': 'sunshine_percent', 'title': '% от возможного солнечного света', 'range': (sunshine_percent_min, sunshine_percent_max), 'coverage': get_param_coverage(month, 'sunshine_percent')}]
+            #{'name': 'sunshine_percent', 'title': '% от возможного солнечного света', 'range': (sunshine_percent_min, sunshine_percent_max), 'coverage': get_param_coverage(month, 'sunshine_percent')}
+            ]
 
 
 # calculate how much of target param is filled

@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect } from "react";
 import PlacesContext from "../../context/places/placesContext";
 import Select from "./Select";
-import RangeFilter from "./RangeFilter";
+import RangeControlGroup from "./RangeControlGroup";
 import ResetButton from "./ResetButton";
 import ApplyButton from "./ApplyButton";
 
@@ -20,7 +20,7 @@ const FilterColumn = () => {
     <div className="filters-column">
       <Select />
       {params &&
-        params.map((p, index) => <RangeFilter param={p} key={index} />)}
+        params.map((p, index) => <RangeControlGroup param={p} key={index} />)}
       <ResetButton />
       <ApplyButton />
     </div>

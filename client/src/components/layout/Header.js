@@ -1,12 +1,15 @@
 import React from "react";
-import Typography from "@material-ui/core/Typography";
 
 const Header = () => {
   return (
     <div className="header">
-      <Typography gutterBottom>
-        <h1>Perfect Climate</h1>
-      </Typography>
+      <h4>
+        Perfect
+        <img src="./customIcon.svg" alt="Perfect Climate logo" width="50px" />
+        Climate
+      </h4>
+
+      <h6>Погода на любой вкус</h6>
     </div>
   );
 };

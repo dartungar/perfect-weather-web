@@ -54,6 +54,7 @@ class Iwmo(Base):
     id = Column('id', Integer,  primary_key=True)
     iwmo_id = Column('iwmo_id', String)
     name = Column('name', String)
+    country = Column('country', String)
     latitude = Column('latitude', Float)
     longitude = Column('longitude', Float)
     elevation = Column('elevation', Float)
@@ -61,7 +62,7 @@ class Iwmo(Base):
     def to_dict(self):
         return {'id': self.id,
                 'iwmo_id': self.iwmo_id,
-                'name': self.name,
+                'name': f'{self.name.strip().title()}, {self.country.strip().title()}',
                 'latitude': self.latitude,
                 'longitude': self.longitude,
                 'elevation': self.elevation}

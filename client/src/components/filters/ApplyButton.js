@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import PlacesContext from "../../context/places/placesContext";
-import Button from "@material-ui/core/Button";
 
 const ApplyButton = () => {
   const placesContext = useContext(PlacesContext);
@@ -9,15 +8,15 @@ const ApplyButton = () => {
     placesContext.getPlaces();
   };
   return (
-    <Button
-      className="filter-column-button"
+    <a
+      className="filter-column-button waves-effect waves-light btn cyan darken-1"
       variant="contained"
       color="primary"
       value="Применить"
       onClick={handleSubmit}
     >
       Применить
-    </Button>
+    </a>
   );
 };
 

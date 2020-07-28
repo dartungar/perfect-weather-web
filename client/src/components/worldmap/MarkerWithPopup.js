@@ -1,6 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Marker, Popup } from "react-leaflet";
+import L from "leaflet";
+
+const customIcon = L.icon({
+  iconUrl: "./customIcon.svg",
+  iconSize: [28, 28],
+});
 
 const MarkerWithPopup = ({
   place: {
@@ -16,9 +22,9 @@ const MarkerWithPopup = ({
   },
 }) => {
   return (
-    <Marker position={[latitude, longitude]}>
+    <Marker position={[latitude, longitude]} icon={customIcon} title={name}>
       <Popup>
-        <h4>{name}</h4>
+        <h6>{name}</h6>
         <p>
           IWMO: <b>{iwmo}</b>{" "}
         </p>
