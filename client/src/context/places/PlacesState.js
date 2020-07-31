@@ -43,7 +43,6 @@ const PlacesState = (props) => {
       humidity: getParamsValueByname("humidity"),
       precipitation_monthly: getParamsValueByname("precipitation_monthly"),
       sunshine_hours: getParamsValueByname("sunshine_hours"),
-      sunshine_percent: getParamsValueByname("sunshine_percent"),
     };
 
     console.log(simpleParams);
