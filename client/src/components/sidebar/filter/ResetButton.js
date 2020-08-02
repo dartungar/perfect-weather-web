@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import PlacesContext from "../../context/places/placesContext";
+import PlacesContext from "../../../context/places/placesContext";
 import Button from "@material-ui/core/Button";
 
 const ResetButton = () => {
@@ -12,10 +12,10 @@ const ResetButton = () => {
     <a
       className="filter-column-button waves-effect waves-light btn grey lighten-4 blue-grey-text"
       variant="contained"
-      value="Применить"
+      value="Reset"
       onClick={handleReset}
     >
-      Сбросить
+      Reset
     </a>
   );
 };

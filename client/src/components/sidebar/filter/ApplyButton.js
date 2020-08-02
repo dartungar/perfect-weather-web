@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import PlacesContext from "../../context/places/placesContext";
+import PlacesContext from "../../../context/places/placesContext";
 
 const ApplyButton = () => {
   const placesContext = useContext(PlacesContext);
@@ -12,10 +12,10 @@ const ApplyButton = () => {
       className="filter-column-button waves-effect waves-light btn cyan darken-1"
       variant="contained"
       color="primary"
-      value="Применить"
+      value="Search"
       onClick={handleSubmit}
     >
-      Применить
+      Search
     </a>
   );
 };

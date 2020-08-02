@@ -1,24 +1,30 @@
 import React, { Fragment, useState } from "react";
 import PropTypes from "prop-types";
 import Header from "../layout/Header";
-import FilterColumn from "../filters/FilterColumn";
-import SidebarOpenButton from "./SidebarOpenButton";
+import FilterColumn from "./filter/FilterColumn";
+import SidebarControls from "./SidebarControls";
 
 const Sidebar = (props) => {
-  const [showSidebar, setShowSidebar] = useState(true);
+  const [isSidebarShown, setIsSidebarShown] = useState(true);
 
-  const handleClick = () => {
-    console.log("changing sidebar visibility");
-    setShowSidebar(!showSidebar);
+  const toggleSidebar = () => {
+    setIsSidebarShown(!isSidebarShown);
   };
 
   return (
-    <Fragment>
-      <SidebarOpenButton onClick={handleClick} />
-      <div className={`sidebar ${!showSidebar && "hidden"}`}>
-        <Header /> <FilterColumn />
+    <div className="sidebar">
+      <SidebarControls
+        toggleSidebar={toggleSidebar}
+        isSidebarShown={isSidebarShown}
+      />
+      <div className={`sidebar-main ${!isSidebarShown && "hidden"}`}>
+        {isSidebarShown && (
+          <Fragment>
+            <Header /> <FilterColumn />
+          </Fragment>
+        )}
       </div>
-    </Fragment>
+    </div>
   );
 };
 

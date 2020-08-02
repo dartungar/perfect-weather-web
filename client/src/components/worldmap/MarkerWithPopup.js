@@ -24,25 +24,53 @@ const MarkerWithPopup = ({
   return (
     <Marker position={[latitude, longitude]} icon={customIcon} title={name}>
       <Popup>
-        <h6>{name}</h6>
-        <p>
-          IWMO: <b>{iwmo}</b>{" "}
+        <h5>{name}</h5>
+        <table className="highlight">
+          <tbody>
+            <tr>
+              <td>Meteo Station ID</td>
+              <td>{iwmo}</td>
+            </tr>
+            <tr>
+              <td>Avg. temperature</td>
+              <td>{mean_temp} C</td>
+            </tr>
+            <tr>
+              <td>Avg. max.temperature</td>
+              <td>{mean_max_temp} C</td>
+            </tr>
+            <tr>
+              <td>Avg. humidity</td>
+              <td>{humidity}%</td>
+            </tr>
+            <tr>
+              <td>Total precipitation that month</td>
+              <td>{precipitation_monthly}mm</td>
+            </tr>
+            <tr>
+              <td>Total hours of sunshine that month</td>
+              <td>{sunshine_hours}</td>
+            </tr>
+          </tbody>
+        </table>
+        {/* <p>
+          Meteo Station ID: <b>{iwmo}</b>{" "}
         </p>
         <p>
-          Сред.температура: <b>{mean_temp}</b>{" "}
+          Avg. temperature: <b>{mean_temp}</b>{" "}
         </p>
         <p>
-          Сред.дневная температура: <b>{mean_max_temp}</b>
+          Avg. max.temperature: <b>{mean_max_temp}</b>
         </p>
         <p>
-          Сред. влажность: <b>{humidity}</b>
+          Avg. humidity: <b>{humidity}</b>
         </p>
         <p>
-          Осадков в месяц, мм: <b>{precipitation_monthly}</b>
+          Total precipitation that month: <b>{precipitation_monthly}</b>
         </p>
         <p>
-          Часов солнечного света в месяц: <b>{sunshine_hours}</b>
-        </p>
+          Total hours of sunshine that month: <b>{sunshine_hours}</b>
+        </p> */}
       </Popup>
     </Marker>
   );

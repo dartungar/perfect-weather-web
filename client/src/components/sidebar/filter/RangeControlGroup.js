@@ -1,6 +1,6 @@
 import React, { Fragment, useState, useContext, useEffect } from "react";
 import PropTypes from "prop-types";
-import PlacesContext from "../../context/places/placesContext";
+import PlacesContext from "../../../context/places/placesContext";
 import RangeSlider from "./RangeSlider";
 
 const RangeControlGroup = ({ param }) => {
@@ -19,10 +19,7 @@ const RangeControlGroup = ({ param }) => {
 
   return (
     <div className="control-item">
-      <div
-        class="switch"
-        title={isEnabled ? "выключить фильтр" : "включить фильтр"}
-      >
+      <div class="switch" title={isEnabled ? "enable" : "disable"}>
         <label>
           <input
             type="checkbox"
@@ -36,7 +33,7 @@ const RangeControlGroup = ({ param }) => {
       </div>
       <i
         className="material-icons"
-        title={`Есть данные по ${param.coverage * 100}% метеостанций`}
+        title={`We have data for ${param.coverage * 100}% of meteo stations`}
       >
         info
       </i>

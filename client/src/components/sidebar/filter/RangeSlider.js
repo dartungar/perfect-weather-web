@@ -1,7 +1,7 @@
 import React, { Fragment, useState, useContext, useEffect } from "react";
 import PropTypes from "prop-types";
 import Slider from "rc-slider";
-import PlacesContext from "../../context/places/placesContext";
+import PlacesContext from "../../../context/places/placesContext";
 import "rc-slider/assets/index.css";
 
 const createSliderWithTooltip = Slider.createSliderWithTooltip;
@@ -11,6 +11,11 @@ const RangeSlider = ({ param, isEnabled }) => {
   const placesContext = useContext(PlacesContext);
   const { setCurrentParamValue } = placesContext;
   const [value, setValue] = useState([]);
+
+  const marks = {
+    [param.range[0]]: param.range[0],
+    [param.range[1]]: param.range[1],
+  };
 
   useEffect(() => {
     setValue(param.value);
@@ -31,7 +36,8 @@ const RangeSlider = ({ param, isEnabled }) => {
       max={param.range[1]}
       onChange={handleChange}
       disabled={!isEnabled}
-      // handle={RangeSliderHandle}
+      marks={marks}
+      //handle={RangeSliderHandle}
     />
   );
 };

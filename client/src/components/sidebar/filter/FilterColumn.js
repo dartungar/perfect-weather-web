@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from "react";
-import PlacesContext from "../../context/places/placesContext";
+import PlacesContext from "../../../context/places/placesContext";
 import Select from "./Select";
 import RangeControlGroup from "./RangeControlGroup";
 import ResetButton from "./ResetButton";
@@ -16,6 +16,7 @@ const FilterColumn = () => {
     // eslint-disable-next-line
   }, []);
 
+  // create control for every param that is fetched from API
   return (
     <div className="filters-column">
       <Select />

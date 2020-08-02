@@ -9,7 +9,7 @@ const Header = () => {
         Climate
       </h4>
 
-      <h6>Погода на любой вкус</h6>
+      <h6>Find places with climate that you like</h6>
     </div>
   );
 };

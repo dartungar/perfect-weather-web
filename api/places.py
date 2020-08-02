@@ -64,14 +64,14 @@ def get_params_range(month):
     # sunshine_percent_max = round(session.query(func.max(ClimateData.sunshine_percent)).filter(and_(ClimateData.month == month, ClimateData.sunshine_percent < 200.0))
     #                              .one()[0], 1)
 
-    return [{'name': 'mean_temp', 'title': 'Средняя температура', 'range': (mean_temp_min, mean_temp_max), 'coverage': get_param_coverage(month, 'mean_temp')},
-            {'name': 'mean_max_temp', 'title': 'Средняя дневная температура', 'range': (
+    return [{'name': 'mean_temp', 'title': 'Avgerage temperature', 'range': (mean_temp_min, mean_temp_max), 'coverage': get_param_coverage(month, 'mean_temp')},
+            {'name': 'mean_max_temp', 'title': 'Avgerage max.temperature', 'range': (
                 mean_max_temp_min, mean_max_temp_max), 'coverage': get_param_coverage(month, 'mean_max_temp')},
-            {'name': 'humidity', 'title': 'Среднемес. влажность',
+            {'name': 'humidity', 'title': 'Avgerage humidity',
                 'range': (humidity_min, humidity_max), 'coverage': get_param_coverage(month, 'humidity')},
-            {'name': 'precipitation_monthly', 'title': 'Осадки за месяц', 'range': (
+            {'name': 'precipitation_monthly', 'title': 'Total precipitation that month', 'range': (
                 precipitation_monthly_min, precipitation_monthly_max), 'coverage': get_param_coverage(month, 'precipitation_monthly')},
-            {'name': 'sunshine_hours', 'title': 'Часов солнечного света в месяц', 'range': (
+            {'name': 'sunshine_hours', 'title': 'Total hours of sunshine that month', 'range': (
                 sunshine_hours_min, sunshine_hours_max), 'coverage': get_param_coverage(month, 'sunshine_hours')},
             #{'name': 'sunshine_percent', 'title': '% от возможного солнечного света', 'range': (sunshine_percent_min, sunshine_percent_max), 'coverage': get_param_coverage(month, 'sunshine_percent')}
             ]

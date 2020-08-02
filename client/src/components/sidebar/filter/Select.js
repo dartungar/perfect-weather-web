@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from "react";
-import PlacesContext from "../../context/places/placesContext";
+import PlacesContext from "../../../context/places/placesContext";
 import M from "materialize-css/dist/js/materialize.min.js";
 
 const MonthSelect = () => {
@@ -8,18 +8,18 @@ const MonthSelect = () => {
   const [currentMonth, setCurrentMonth] = useState("");
 
   const monthNames = {
-    Jan: "Январь",
-    Feb: "Февраль",
-    Mar: "Март",
-    Apr: "Апрель",
-    May: "Май",
-    Jun: "Июнь",
-    Jul: "Июль",
-    Aug: "Август",
-    Sep: "Сентябрь",
-    Oct: "Октябрь",
-    Nov: "Ноябрь",
-    Dec: "Декабрь",
+    Jan: "January",
+    Feb: "February",
+    Mar: "March",
+    Apr: "April",
+    May: "May",
+    Jun: "June",
+    Jul: "July",
+    Aug: "August",
+    Sep: "September",
+    Oct: "October",
+    Nov: "November",
+    Dec: "December",
   };
 
   useEffect(() => {
@@ -49,11 +49,8 @@ const MonthSelect = () => {
   };
 
   return (
-    <div class="input-field col s12">
+    <div className="input-field col s12">
       <select onChange={handleChange}>
-        {/* <option value="" disabled selected>
-          Выберите месяц
-        </option> */}
         {Object.keys(monthNames).map((key) => (
           <option
             value={key}
@@ -64,7 +61,7 @@ const MonthSelect = () => {
           </option>
         ))}
       </select>
-      <label>Месяц</label>
+      <label>Month</label>
     </div>
   );
 };
